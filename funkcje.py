@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 
+
 def wczytaj_z_pliku(nazwaPliku):
     try:
         f = open(nazwaPliku)
@@ -16,9 +17,11 @@ def zapisz_do_pliku(nazwa, dane):
     with open(nazwa, 'w') as f:
         json.dump(dane, f)
 
+
 def wczytaj_czas():
     teraz = str(datetime.now())
     return teraz
+
 
 def wczytaj_dane(zapytanie):
     wczytane = input(zapytanie)
@@ -35,10 +38,10 @@ def nowy_pacjent(naglowki, dane, IDlist):
     pacjent[naglowki[1]] = wczytaj_czas()
     for klucz in naglowki[2:]:
         while True:
-            wpis = input('Insert '+klucz+':')
+            wpis = input('Insert ' + klucz + ':')
             if klucz == naglowki[2] and wpis not in ['M', 'F']:
                 print('Insert a valid information: F for female, M for male')
-            elif klucz in naglowki[3:6]and not wpis.isdigit():
+            elif klucz in naglowki[3:6] and not wpis.isdigit():
                 print('Insert a valid number')
             else:
                 pacjent[klucz] = wpis
@@ -46,7 +49,6 @@ def nowy_pacjent(naglowki, dane, IDlist):
 
     dane.append(pacjent)
     print('Database updated!')
-
     return dane
 
 
@@ -114,4 +116,3 @@ def eksport_wybranych(dane, IDlist):
         zapisz_do_pliku(nazwa_pliku, lista_wybrane_rekordy)
     else:
         print('No IDs selected!')
-
