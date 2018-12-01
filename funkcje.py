@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 
-
 def wczytaj_z_pliku(nazwaPliku):
     try:
         f = open(nazwaPliku)

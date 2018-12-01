@@ -10,7 +10,6 @@ else:
         klucze.append(key)
 
 print('Welcome to HBV 2018 database')
-
 while True:
     lista_ID = [n['ID'] for n in baza]
     print('****************')
