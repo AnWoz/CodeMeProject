@@ -19,7 +19,7 @@ while True:
     Add new column: press 3
     Print existing database: press 4
     Print data for selected patient: press 5
-    Close database: press 0
+    Close database and save changes: press 0
     ''')
     selection = input()
 
@@ -43,10 +43,9 @@ while True:
         eksport_wybranych(dane=baza, IDlist=lista_ID)
 
     if selection == '0':
+        print('Thank you for using HBV 2018 database!\nThe database is as follows:')
+        for rekord in baza:
+            print(rekord, '\n')
+
+        zapisz_do_pliku('HBV_database.json', baza)
         break
-
-print('Thank you for using HBV 2018 database!\nThe database is as follows:')
-for rekord in baza:
-    print(rekord, '\n')
-
-zapisz_do_pliku('HBV_database.json', baza)
