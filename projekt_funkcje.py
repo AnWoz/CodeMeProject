@@ -46,7 +46,6 @@ while True:
         print('Thank you for using HBV 2018 database!\nThe database is as follows:')
         for rekord in baza:
             print(rekord, '\n')
-
         zapisz_do_pliku('HBV_database.json', baza)
         break
 
